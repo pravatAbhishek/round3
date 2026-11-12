@@ -7,5 +7,4 @@ def calculate_final_price(amount: float, discount_percent: float) -> float:
     if not 0 <= discount_percent <= 100:
         raise ValueError("Discount must be between 0 and 100")
 
-    # INCIDENT: Percentage is incorrectly subtracted as currency.
-    return round(amount - discount_percent, 2)
+    return round(amount * (1 - (discount_percent / 100)), 2)
